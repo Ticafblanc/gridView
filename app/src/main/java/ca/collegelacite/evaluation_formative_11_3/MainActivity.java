@@ -31,7 +31,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, WebViewj.class);
-                intent.putExtra("pok", position);
+//                intent.putExtra("pok", position);
+
+                intent.putExtra("img", listeDePokemons.get(position).getDrawable());
+                intent.putExtra("title", listeDePokemons.get(position).getNomFrançais());
+                intent.putExtra("desc", listeDePokemons.get(position).getDescription());
+                intent.putExtra("type", listeDePokemons.get(position).getType());
+                intent.putExtra("url", listeDePokemons.get(position).getWikiUrl());
                 startActivity(intent);
             }
         });
